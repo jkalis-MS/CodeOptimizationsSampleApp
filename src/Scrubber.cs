@@ -17,8 +17,7 @@ public class Scrubber
         foreach (string word in wordList)
         {
             data = data.Replace(word, replacementChar.ToString(), ignoreCase: true, culture);
-        }
-        Console.WriteLine(data);    
+        }  
         return data;
     }
 }
