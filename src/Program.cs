@@ -1,14 +1,16 @@
 using System.Globalization;
-namespace Store.Checkout.Services;
+namespace eShop.Store.Reviews;
+using Microsoft.Extensions.Logging;
 
 internal class Program
 {
-    private static int Main(string[] args)
+    private static readonly ILogger<Program>? _logger; // Add a private static ILogger field
+        private static int Main(string[] args)
     {
-      
+
         var builder = WebApplication.CreateBuilder(args);
-        builder.Services.AddHostedService<BackgroundScrubber>();
-    
+        builder.Services.AddHostedService<BackgroundReviewValidation>();
+
         var app = builder.Build();
 
         app.MapGet("/scrub", () =>
@@ -19,14 +21,15 @@ internal class Program
                 x = x + Random.Shared.Next(0, 10).ToString();
                 if (i % 50 == 0)
                 {
-                    Scrubber.SanitizeData("Working...", 'X', CultureInfo.CurrentCulture);
+                    ReviewValidation.StringValidation("Working...", 'X', CultureInfo.CurrentCulture);
+                    _logger.LogInformation($"Number: {i}");
                 }
             }
 
-            return Scrubber.SanitizeData($"PI is {x}", 'X', CultureInfo.CurrentCulture);
+            return ReviewValidation.StringValidation($"PI is {x}", 'X', CultureInfo.CurrentCulture);
         });
 
-        app.MapGet("/", () => "Hello World! V2");
+        app.MapGet("/", () => "Hello World! V4 4/30/24");
         app.Run();
 
         return 0;

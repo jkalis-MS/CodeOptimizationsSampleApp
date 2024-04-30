@@ -1,14 +1,14 @@
 ﻿using System.Globalization;
 
-namespace Store.Checkout.Services;
+namespace eShop.Store.Reviews;
 
-public class Scrubber
+public class ReviewValidation
 {
     internal record LocalizedWord(string Text, CultureInfo Culture);
 
     private static IEnumerable<LocalizedWord> DisallowedWords { get; } = ScrubberHelpers.LoadDisallowedWords();
 
-    public static string SanitizeData(string data, char replacementChar, CultureInfo culture)
+    public static string StringValidation(string data, char replacementChar, CultureInfo culture)
     {
         List<string> wordList = DisallowedWords
             .Where(word => culture.Equals(CultureInfo.InvariantCulture) || culture.Equals(word.Culture))
