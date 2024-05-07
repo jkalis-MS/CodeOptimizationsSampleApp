@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
 
-namespace eShop.Store.Reviews;
+namespace Store.Reviews;
 
 public class BackgroundReviewValidation : BackgroundService
 {

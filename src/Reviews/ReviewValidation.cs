@@ -1,12 +1,12 @@
 ﻿using System.Globalization;
 
-namespace eShop.Store.Reviews;
+namespace Store.Reviews;
 
 public class ReviewValidation
 {
     internal record LocalizedWord(string Text, CultureInfo Culture);
 
-    private static IEnumerable<LocalizedWord> DisallowedWords { get; } = ScrubberHelpers.LoadDisallowedWords();
+    private static IEnumerable<LocalizedWord> DisallowedWords { get; } = ReviewHelper.LoadDisallowedWords();
 
     public static string StringValidation(string data, char replacementChar, CultureInfo culture)
     {
@@ -17,7 +17,7 @@ public class ReviewValidation
         foreach (string word in wordList)
         {
             data = data.Replace(word, replacementChar.ToString(), ignoreCase: true, culture);
-        }  
+        }
         return data;
     }
 }

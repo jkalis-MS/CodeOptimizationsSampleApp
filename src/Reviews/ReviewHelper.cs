@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using static eShop.Store.Reviews.ReviewValidation;
+using static Store.Reviews.ReviewValidation;
 
-internal static class ScrubberHelpers
+internal static class ReviewHelper
 {
     public static IEnumerable<LocalizedWord> LoadDisallowedWords()
     {

@@ -1,12 +1,14 @@
 using System.Globalization;
-namespace eShop.Store.Reviews;
+namespace Store.Reviews;
 using Microsoft.Extensions.Logging;
 
 internal class Program
 {
-    private static readonly ILogger<Program>? _logger; // Add a private static ILogger field
+    //private static readonly ILogger<Program>? _logger; // Add a private static ILogger field
         private static int Main(string[] args)
     {
+
+        using ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
 
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddHostedService<BackgroundReviewValidation>();
@@ -16,13 +18,14 @@ internal class Program
         app.MapGet("/scrub", () =>
         {
             string x = Math.PI.ToString();
+            ILogger logger = factory.CreateLogger("Main program /scrub");
             for (int i = 0; i < 1000; i++)
             {
                 x = x + Random.Shared.Next(0, 10).ToString();
                 if (i % 50 == 0)
                 {
                     ReviewValidation.StringValidation("Working...", 'X', CultureInfo.CurrentCulture);
-                    _logger.LogInformation($"Number: {i}");
+                    logger.LogInformation("Logging information...") ;
                 }
             }
 
