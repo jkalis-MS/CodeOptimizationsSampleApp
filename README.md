@@ -33,13 +33,17 @@ Once published and the app is started a browser window opens with the home page 
 2.6. Once ready, doublecheck that in the **.NET Core** tab the Profiler is **On**  
 
 More details in the App Insights Profiler documentation https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-application-insights-and-profiler  
-
+  
 > [!IMPORTANT]  
 > ### Enable Managed Identity
-> Now any application (if it knows the connection string with a unique instrumentation key) can send data to your Application Insights. Details are here https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-microsoft-entra-authentication-for-profile-ingestion. The steps are as follows:
+> Now any application (if it knows the connection string with a unique instrumentation key) can send data to your Application Insights. A more secure way is using Microsoft Entra authentication.
+> More details in the documentation https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-microsoft-entra-authentication-for-profile-ingestion.
 
-2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**
-2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**
+The steps to enable system manged identity are as follows:
+
+2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**  
+2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**  
+
 
 ## 3. Create 
 
