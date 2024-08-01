@@ -57,5 +57,5 @@ The simplest way to generate incoming requests to your application is to create 
 3.5. To speed up the Profile trace collection, you can increase the Profiler sampling to **Max** ( Profiler -> Triggers -> Sampling) 
 3.6. Observe the Profiler page, once traces are visible, within an hour you sould see Code Optimizations  
 
-For advanced troubleshooting you can use the Diagnostics Services status page https://<your_web_app_name>.scm.azurewebsites.net/diagnosticservices
+For advanced Profiler troubleshooting you can use the Diagnostics Services status page https://<your_web_app_name>.scm.azurewebsites.net/diagnosticservices
 
