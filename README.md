@@ -8,7 +8,7 @@ More resources:
 For any questions or comments, please reach out to CodeOptimizations@Microsoft.com
 
 # How to publish this app and set-up Application Insights Code Optimizations
-The steps are simple, first publish this app into Azure App Service, second enable Application Insights and Application Insights Profiler, third create some load to your application
+The steps are simple, **first** publish this app into Azure App Service, **second** enable Application Insights and Application Insights Profiler, **third** generate incoming requests for your application
 
 ## 1. Publishing the app
 Feel free to use the IDE of your choice. Below is a detailed description for Visual Studio.
@@ -38,10 +38,10 @@ Feel free to use the IDE of your choice. Below is a detailed description for Vis
   
 > [!IMPORTANT]  
 > ### Enable Managed Identity
-> Now any application (if it knows the connection string with a unique instrumentation key) can send data to your Application Insights. A more secure way is using Microsoft Entra authentication.
+> Application Insights is by-default in "local authentication" mode. Which means that any application (if it knows the connection string with a unique instrumentation key) can send data to your Application Insights. A more secure way is using Microsoft Entra authentication.
 > More details in the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-microsoft-entra-authentication-for-profile-ingestion).
 
-The steps to enable system manged identity are as follows:
+_**The steps to enable system manged identity are as follows:**_
 
 2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**  
 2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**  
@@ -51,7 +51,7 @@ The steps to enable system manged identity are as follows:
 3.0. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. _IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.7. to 2.9.)_   
 
 
-## 3. Add some load to your application
+## 3. Add load to your application
 The simplest way to generate incoming requests to your application is to create an Availability test *part of Application insights).  
 
 3.1. In your Application Insights resource, open **Availability** page  
