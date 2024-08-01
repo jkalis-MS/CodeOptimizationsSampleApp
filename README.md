@@ -46,7 +46,7 @@ The steps to enable system manged identity are as follows:
 
 2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**  
 2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**  
-![](images/2.6.%20Profiler%20ON.png)  
+![](images/2.8.%20Managed%20identity.png)  
 
 2.9. Once created, go back to your App Service and click on **Enviroment variables**. Add a new string **APPLICATIONINSIGHTS_AUTHENTICATION_STRING** with value Authorization=AAD. Click **Apply** and **Apply** again  
 3.0. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. _IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.7. to 2.9.)_   
@@ -61,6 +61,8 @@ The simplest way to generate incoming requests to your application is to create 
 3.4. Open the **Perfomance** page and observe the incoming traffic
 3.5. To speed up the Profile trace collection, you can increase the Profiler sampling to **Max** ( Profiler -> Triggers -> Sampling) 
 3.6. Observe the Profiler page, once traces are visible, within an hour you sould see Code Optimizations  
+
+![](images/3.4.%20Code%20Optimizations.png)  
 
 For advanced Profiler troubleshooting you can use the Diagnostics Services status page https://<your_web_app_name>.scm.azurewebsites.net/diagnosticservices
 
