@@ -30,6 +30,7 @@ Feel free to use the IDE of your choice. Below is a detailed description for Vis
 2.4. Here you can either create new Application Insights resource or choose an existing one (yes, multiple apps can send data to one Application Insights resource)  
 2.5. Click **Apply**  
 2.6. Once ready, doublecheck that in the **.NET Core** tab the Profiler is **On**  
+2.7. In the App Service **Configuration** page, set **Always on** to **On**  
 
 More details in the App Insights Profiler documentation https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-application-insights-and-profiler  
   
