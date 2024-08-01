@@ -20,8 +20,7 @@ Feel free to use the IDE of your choice. Below is a detailed description for Vis
 1.5. Choose a subscription of your choice, then either select an existing App Service or create new - _make sure to note the name of the App Service_ (e.g. "my_Shop_Demo_App")
 1.6. Once ready, press **Finish** to create publish profile 
 1.7. Close the dialog and press **Publish**
-
-Once published and the app is started a browser window opens with the home page "Hello World!" and version of the app.
+1.8. Once published and the app is started a browser window opens with the home page "Hello World!" and version of the app.  
 
 ## 2. Enabling Application Insights
 
@@ -43,8 +42,18 @@ The steps to enable system manged identity are as follows:
 
 2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**  
 2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**  
+2.9. One created, go back to your App Service and click on **Enviroment variables**. Add a new string **APPLICATIONINSIGHTS_AUTHENTICATION_STRING** with value Authorization=AAD. Click **Apply** and **Apply** again  
+3.0. Open your Application Insights resource and then open the Properties page, find setting LOCAL AUTHENTICATION and Disable it. PLEASE make sure that if other applications are sending data to this Application insights the managed identity is enabled on the app side as well for all apps (steps 2.7. to 2.9.)  
 
 
-## 3. Create 
+## 3. Add some load to your application
+The simplest way to generate incoming requests to your application is to create an Availability test *part of Application insights).  
+
+3.1. In your Application Insights resource, open Availability page  
+3.2. Add standard test, give it a name  
+3.3. In the URL paste the homepage of your newely published app (from step 1.8, if you closed the window you can find the URL in the App Service Overview page)  
+3.4. Open the Perfomance page and observe the incoming traffic
+3.5. To speed up the Profile trace collection, you can increase the Profiler sampling to **Max** ( Profiler -> Triggers -> Sampling) 
+3.6. Observe the Profiler page, once traces are visible, within an hour you sould see Code Optimizations
 
 
