@@ -20,6 +20,7 @@ Feel free to use the IDE of your choice. Below is a detailed description for Vis
 1.5. Choose a subscription, then either select an existing App Service or create new - _make sure to note the name of the App Service_ (e.g. "my_Shop_Demo_App")  
 1.6. Once ready, press **Finish** to create publish profile  
 1.7. Close the dialog and press **Publish**  
+https://github.com/jkalis-MS/CodeOptimizationsSampleApp/blob/main/images/1.7.%20Publish.png  
 1.8. Once published and the app is started, a browser window will open with "Hello World!" and version of the app.  
 
 ## 2. Enabling Application Insights
