@@ -31,6 +31,8 @@ Feel free to use the IDE of your choice. Below is a detailed description for Vis
 2.4. Here you can either create new Application Insights resource or choose an existing one (yes, multiple apps can send data to one Application Insights resource)  
 2.5. Click **Apply**  
 2.6. Once ready, doublecheck that in the **.NET Core** tab the Profiler is **On**  
+![](images/2.6.%20Profiler%20ON.png)  
+
 2.7. In the App Service **Configuration** page, set **Always on** to **On**  
 
 More details in the App Insights Profiler documentation https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-application-insights-and-profiler  
@@ -44,6 +46,8 @@ The steps to enable system manged identity are as follows:
 
 2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**  
 2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**  
+![](images/2.6.%20Profiler%20ON.png)  
+
 2.9. Once created, go back to your App Service and click on **Enviroment variables**. Add a new string **APPLICATIONINSIGHTS_AUTHENTICATION_STRING** with value Authorization=AAD. Click **Apply** and **Apply** again  
 3.0. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. _IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.7. to 2.9.)_   
 
