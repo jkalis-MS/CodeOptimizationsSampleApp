@@ -35,12 +35,11 @@ Feel free to use the IDE of your choice. Below is a detailed description for Vis
 
 2.7. In the App Service **Configuration** page, set **Always on** to **On**  
 
-More details in the App Insights Profiler documentation https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-application-insights-and-profiler  
   
 > [!IMPORTANT]  
 > ### Enable Managed Identity
 > Now any application (if it knows the connection string with a unique instrumentation key) can send data to your Application Insights. A more secure way is using Microsoft Entra authentication.
-> More details in the documentation https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-microsoft-entra-authentication-for-profile-ingestion.
+> More details in the [documentation] (https://learn.microsoft.com/en-us/azure/azure-monitor/profiler/profiler#enable-microsoft-entra-authentication-for-profile-ingestion).
 
 The steps to enable system manged identity are as follows:
 
