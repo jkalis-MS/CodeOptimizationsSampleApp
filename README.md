@@ -6,3 +6,16 @@ More resources:
 - Latest updates and upcoming features https://aka.ms/CodeOptimizations/LatestUpdates
 
 For any questions or comments, please reach out to CodeOptimizations@Microsoft.com
+
+# How to publish this app and set-up Application Insights Code Optimizations
+The steps are simple, first publish this app into Azure App Service, second enable Application Insights, third enable Application Insights Profiler.
+
+## 1. Publishing the app
+Feel free to use the IDE of your choice. Below is a detailed description for Visual Studio.
+
+1.1. Clone this repo in VS
+1.2. Open the project
+1.3. Right-click the app "**Store**" in solutio explorer and select "**Publish...**"
+1.4. In the Publish dialog choose **Azure**, then Azure **App Service (Windows)**
+1.5. Choose a subscription of your choice, then either select an existing App Service or create new
+1.6. Once ready, press **Finish** to publish the app
