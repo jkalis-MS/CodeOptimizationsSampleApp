@@ -43,7 +43,7 @@ The steps to enable system manged identity are as follows:
 2.7. In your App Service, on the **Identity** page validate that **Status** for Sytem assigned identity is **On**  
 2.8. On the same page click **Azure role assignments** and add a new role assignment **Monitoring Metrics Publisher**  
 2.9. Once created, go back to your App Service and click on **Enviroment variables**. Add a new string **APPLICATIONINSIGHTS_AUTHENTICATION_STRING** with value Authorization=AAD. Click **Apply** and **Apply** again  
-3.0. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.7. to 2.9.)_   
+3.0. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. _IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.7. to 2.9.)_   
 
 
 ## 3. Add some load to your application
