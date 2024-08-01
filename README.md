@@ -55,6 +55,7 @@ The simplest way to generate incoming requests to your application is to create 
 3.3. In the URL paste the homepage of your newely published app (from step 1.8, if you closed the window you can find the URL in the App Service Overview page)  
 3.4. Open the **Perfomance** page and observe the incoming traffic
 3.5. To speed up the Profile trace collection, you can increase the Profiler sampling to **Max** ( Profiler -> Triggers -> Sampling) 
-3.6. Observe the Profiler page, once traces are visible, within an hour you sould see Code Optimizations
+3.6. Observe the Profiler page, once traces are visible, within an hour you sould see Code Optimizations  
 
+For advanced troubleshooting you can use the Diagnostics Services status page https://<your_web_app_name>.scm.azurewebsites.net/diagnosticservices
 
