@@ -13,9 +13,14 @@ The steps are simple, first publish this app into Azure App Service, second enab
 ## 1. Publishing the app
 Feel free to use the IDE of your choice. Below is a detailed description for Visual Studio.
 
-1.1. Clone this repo in VS
-1.2. Open the project
-1.3. Right-click the app "**Store**" in solutio explorer and select "**Publish...**"
-1.4. In the Publish dialog choose **Azure**, then Azure **App Service (Windows)**
-1.5. Choose a subscription of your choice, then either select an existing App Service or create new
-1.6. Once ready, press **Finish** to publish the app
+1.1. Clone this repo in VS  
+1.2. Open the project  
+1.3. Right-click the app "**Store**" in solutio explorer and select "**Publish...**"  
+1.4. In the Publish dialog choose **Azure**, then Azure **App Service (Windows)**  
+1.5. Choose a subscription of your choice, then either select an existing App Service or create new  
+1.6. Once ready, press **Finish** to create publish profile 
+1.7. Close the dialog and press **Publish**
+
+Once published and the app is started a browser window opens with the home page "Hello World!" and version of the app.
+
+
