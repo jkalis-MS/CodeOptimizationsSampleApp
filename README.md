@@ -11,7 +11,7 @@ For any questions or comments, please reach out to CodeOptimizations@Microsoft.c
 The steps are simple, **first** publish this app into Azure App Service, **second** enable Application Insights and Application Insights Profiler, **third** generate incoming requests for your application
 
 ## 1. Publishing the app
-Feel free to use the IDE of your choice. Below is a detailed description for Visual Studio.
+Feel free to use an IDE of your choice. Below is a detailed description for Visual Studio.
 
 1.1. Clone this repo in VS  
 1.2. Open the project  
@@ -48,20 +48,22 @@ _**The steps to enable system manged identity are as follows:**_
 ![](images/2.8.%20Managed%20identity.png)  
 
 2.10. Once created, go back to your App Service and click on **Enviroment variables**. Add a new string **APPLICATIONINSIGHTS_AUTHENTICATION_STRING** with value Authorization=AAD. Click **Apply** and **Apply** again  
-2.11. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. _IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.7. to 2.9.)_   
+2.11. Open your **Application Insights** resource and then open the **Properties** page, find setting **LOCAL AUTHENTICATION** and Disable it. _IMPORTANT if other applications are sending data to this Application insights, please make sure that the managed identity is enabled for all such apps (steps 2.8. to 2.11.)_   
 
-
+  
 ## 3. Add load to your application
-The simplest way to generate incoming requests to your application is to create an Availability test *part of Application insights).  
+The simplest way to generate incoming requests to your application is to create an Availability test that is part of Application insights.  
 
 3.1. In your Application Insights resource, open **Availability** page  
 3.2. Click **Add standard test**, give it a name  
 3.3. In the URL paste the homepage of your newely published app (from step 1.8, if you closed the window you can find the URL in the App Service Overview page)  
-3.4. Open the **Perfomance** page and observe the incoming traffic
-3.5. To speed up the Profile trace collection, you can increase the Profiler sampling to **Max** ( Profiler -> Triggers -> Sampling) 
+3.4. Open the **Perfomance** page and observe the incoming traffic  
+3.5. To speed up the Profile trace collection, you can increase the Profiler sampling to **Max** ( Profiler -> Triggers -> Sampling)  
 3.6. Observe the Profiler page, once traces are visible, within an hour you sould see Code Optimizations  
 
 ![](images/3.4.%20Code%20Optimizations.png)  
 
-For advanced Profiler troubleshooting you can use the Diagnostics Services status page https://<your_web_app_name>.scm.azurewebsites.net/diagnosticservices
+THAT'S IT! Thank you for following all the way to here :)
+
+As needed - for advanced Profiler troubleshooting you can use the Diagnostics Services status page https://<your_web_app_name>.scm.azurewebsites.net/diagnosticservices
 
