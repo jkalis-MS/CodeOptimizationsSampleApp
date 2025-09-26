@@ -1,0 +1,13 @@
+{
+    "servers": {
+			"Azure MCP Debug Build v0.0.3":{
+				"type": "stdio",
+				"command": "C:\\AIR\\fork-ms-mcp\\servers\\Azure.Mcp.Server\\src\\bin\\Debug\\net9.0\\azmcp.exe",
+				"args": ["server", "start"]
+			},
+			"github": {
+				"type": "http",
+				"url": "https://api.githubcopilot.com/mcp/"
+			}
+    }
+}
